@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: #e50914;
+    --primary-hover-color: rgb(193, 17, 25);
+    --sec-color: #212529;
+    --color-white: #fff;
+    --color-dark: #000;
+}
+.netflix-pri-Color{
+    background-color: var(--primary-color);
+    color: var(--color-white);
+}
+
+.netflix-pri-Color:hover{
+background-color:var(--primary-hover-color);
+    color: var(--color-white);
+}
+.netflix-sec-color{
+    background-color:var( --sec-color);
+    color:var(--color-white);
+}
+.netflix-sec-color:hover{
+    color:var(--color-white);
+}
+.background{
+    position: fixed;
+    inset: 0;
+}
+.background .background-image{
+    height: 100%;
+    width: 100%;
+   object-fit: cover;
+   filter:blur(3px);
+}
+/* logo */
+.logo{
+   display:inline-block;
+   width: 150px;
+}
+.logo img{
+    height: 100%;
+    width: 100%;
+}
+/* moviecard-header */
+.movieCard{
+    background-color:rgba(0,0,0,0.6);
+    color:var(--color-white);
+    overflow: hidden;
+}
+.movieCard h4{
+    height: 40px;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.movieCard figure{
+    position: relative;
+    height:300px;
+    overflow:hidden;
+}
+.movieCard figure img{
+    height:100%;
+    width: 100%;
+    object-fit:cover;
+}
+ figcaption{
+    position: absolute;
+    top:30%;
+    left:0;
+    height:70%;
+    width:100%;
+    background-color: rgba(0,0,0,0.6);
+    transition: all 0.7s ease-in-out;
+    overflow-y: auto;
+     transform:translateY(280px);
+}
+.movieCard:hover  figcaption,
+.movieCard:focus  figcaption,
+.movieCard:active  figcaption{
+    transform: translateY(0);
+}
+/* 
+backdrop */
+.backdrop{
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.6);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+}
+.movieModel{
+    position: fixed;
+    top: 5%;
+    left: 25%;
+    width: 50%;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translate(-50%, -20px);
+    transition: all 0.4s ease-in-out;
+}
+
+.backdrop.active,
+.movieModel.active{
+    opacity: 1;
+    }
+
+.backdrop.active, .movieModel.active{
+    opacity: 1;
+    visibility: visible;
+}
+.movieModel.active{
+    transform: translateY(0);
+}
+
+.spinner{
+    position: fixed;
+    inset: 0;
+    left: 0;
+    top:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
